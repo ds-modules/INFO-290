@@ -1,2 +1,0 @@
-instacart_profiling/instacart_data/*.csv filter=lfs diff=lfs merge=lfs -text
-instacart_profiling/instacart_data/order_products__prior_subset.csv filter=lfs diff=lfs merge=lfs -text
