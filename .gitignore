@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# original data batman_lab
+/batman_lab/Data/

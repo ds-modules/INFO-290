@@ -7,13 +7,13 @@ def remove_nan(t):
     Removes all rows with nan values checking each column
     Note you should use this AFTER stripping the table of columns you do not need
     so you do not remove rows when given a column without much information
-    
+
     Will remove most nan values but may not work with some other default missing values
     (specifically, will not remove 0, -999, etc. values)
 
-    Parameters: 
+    Parameters:
     t: a table whose rows with nan values you want to remove
-    
+
     returns a table identical to t but without rows containing nan values
     """
     def checkNotnan(val):
@@ -34,18 +34,18 @@ def addMarkers(fol_map, mark, color="blue",icon='star',max_num=100):
     color: color of the marker added (default: blue)
     icon: icon of marker added (default: star)
     max_num: the maximum number of markers added. Use to not overload folium map (default: 100)
-    
+
     returns nothing. Will modify fol_map directly
     """
-    
+
     if ("Latitude" in mark.column_labels) & ("Longitude" in mark.column_labels):
         lat_index = mark.column_index("Latitude")
         lon_index = mark.column_index("Longitude")
     else:
         lat_index = 0
         lon_index = 1
-    for i in range(markers.num_rows):
-        row = markers.row(i)
+    for i in range(mark.num_rows):
+        row = mark.row(i)
         lat = row[lat_index]
         lon = row[lon_index]
         folium.Marker([lat,lon],icon=folium.Icon(color=color, icon=icon)).add_to(fol_map)
@@ -55,7 +55,7 @@ def addMarkers(fol_map, mark, color="blue",icon='star',max_num=100):
 def dist_coord(lat1,lon1,lat2,lon2):
     """
     returns distance in km between 2 coordinates
-    Not entirely accurate (assumes perfectly spherical earth) but for most purposes works
+    Not entirely accurate (assumes perfectly spherical earth) but works for most purposes
     """
 
     R = 6373.0
@@ -69,6 +69,3 @@ def dist_coord(lat1,lon1,lat2,lon2):
     c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1-a))
     distance = R * c
     return distance
-
-
-
