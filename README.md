@@ -8,7 +8,8 @@ Interactive labs for a graduate class in the School of Information, exploring te
 
 1. A survey of techniques for deidentifying data
 2. Identifying Daredevil from simulated data sets
-3. Clustering target groups from Instacart data
+3. Clustering target groups from Instacart data [[link]](http://datahub.berkeley.edu/user-redirect/interact?account=ds-modules&repo=INFO-290&branch=master&path=instacart_profiling/Identifying%20Groups%20of%20People%20Using%20Instacart%20Data.ipynb
+)
 
 
 [Outline](https://docs.google.com/a/berkeley.edu/presentation/d/1OGg0tbhfkmxAi9XfY9Xho08lHdyoyQlVl_iwlgnnZMU/edit?usp=sharing)
